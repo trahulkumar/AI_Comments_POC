@@ -125,7 +125,7 @@ with tab1:
     with col2:
         st.write("")
         st.write("")
-        st.button("Load Sample Data", width=True, on_click=load_sample_data)
+        st.button("Load Sample Data", use_container_width=True, on_click=load_sample_data)
 
 with tab2:
     st.subheader("File Settings")
@@ -202,7 +202,7 @@ with tab2:
                  st.success(f"Loaded {len(df)} feedback comments into the analysis tab.")
 
 # Analyze button
-if st.button("🚀 Analyze Feedback", type="primary", width=True):
+if st.button("🚀 Analyze Feedback", type="primary", use_container_width=True):
     if not api_key:
         st.error("Please enter your Gemini API key in the sidebar")
     elif not st.session_state.feedback_text:
@@ -253,7 +253,7 @@ if st.session_state.insights:
         fig = px.pie(sentiment_df, values='value', names='name', 
                      color='name',
                      color_discrete_map={'Positive': '#10b981', 'Negative': '#ef4444', 'Neutral': '#6b7280'})
-        st.plotly_chart(fig, width=True)
+        st.plotly_chart(fig, use_container_width=True)
     
     with col2:
         st.subheader("Top Themes")
@@ -262,7 +262,7 @@ if st.session_state.insights:
                      color='sentiment',
                      color_discrete_map={'positive': '#10b981', 'negative': '#ef4444', 'neutral': '#6b7280'})
         fig.update_layout(xaxis_tickangle=-45)
-        st.plotly_chart(fig, width=True)
+        st.plotly_chart(fig, use_container_width=True)
     
     # Critical Issues
     st.header("🚨 Critical Issues")
@@ -302,7 +302,7 @@ if st.session_state.insights:
             insights_json,
             "insights.json",
             "application/json",
-            width=True
+            use_container_width=True
         )
     
     with col2:
@@ -332,5 +332,5 @@ RECOMMENDATIONS:
             report,
             "report.txt",
             "text/plain",
-            width=True
+            use_container_width=True
         )

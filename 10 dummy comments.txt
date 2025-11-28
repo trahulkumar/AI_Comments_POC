@@ -1,0 +1,19 @@
+Love the intuitive dashboard and real-time analytics—Power BI integration is seamless for my reports. Minor lag on mobile login, but overall 9/10 for daily use in my analytics workflow."
+
+"UI is clean, but the comment submission form crashes on iOS Safari every third try. Sentiment analysis preview feature is genius for quick insights, though—fix the bugs and it's perfect."
+
+"Great for team collaboration; sharing insights from user feedback summaries works flawlessly. Add dark mode and export to PDF options to make it enterprise-ready. Highly recommend!"
+
+"Struggles with large comment batches (>500); processing times out after 2 minutes. Theme extraction is accurate, but needs better error handling and progress indicators."
+
+"Transformed how I handle app reviews—sentiment trends over time are spot-on, and action item suggestions save hours. One request: multilingual support for global teams."
+
+"Onboarding tutorial is too basic; assumes prior LLM knowledge. Core pipeline delivers solid summaries, but customize prompts per app type (e.g., e-commerce vs. SaaS). Solid 7/10."
+
+"Exceptional value for Python/Dataiku users like me. Batched JSON outputs integrate perfectly into my workflows. Only nitpick: API rate limits hit during peak hours."
+
+"Poor mobile responsiveness—charts don't render on Android. Desktop version excels at theme clustering, but needs responsive design overhaul for field teams."
+
+"Insightful aggregations reveal user pain points I missed manually. Scheduling daily runs is a game-changer. Suggestion: Add anomaly detection for sentiment spikes."
+
+"Reliable and scalable, but lacks advanced filtering (e.g., by user segment). Summaries are concise yet detailed—pair it with Power BI for killer dashboards. 8.5/10.

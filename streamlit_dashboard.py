@@ -73,6 +73,29 @@ if 'feedback_text' not in st.session_state:
 st.title("✨ AI Feedback Insights Dashboard")
 st.markdown("Analyze user feedback with AI-powered insights")
 
+# Configuration Section
+with st.expander("� Configuration", expanded=True):
+    col1, col2 = st.columns(2)
+    with col1:
+        api_key = st.text_input("Gemini API Key", type="password", 
+                                 help="Enter your Google Gemini API key")
+    
+    with col2:
+        model_name = "gemini-flash-latest"
+        if api_key:
+            with st.spinner("Fetching models..."):
+                available_models = FeedbackAnalyzer.list_available_models(api_key)
+                if available_models:
+                    # Try to set default to flash if available
+                    default_index = 0
+                    for i, m in enumerate(available_models):
+                        if 'flash' in m.lower():
+                            default_index = i
+                            break
+                    model_name = st.selectbox("Select Model", available_models, index=default_index)
+        else:
+            st.selectbox("Select Model", ["Enter API Key first"], disabled=True)
+
 # Sidebar for API key
 with st.sidebar:
     st.markdown("### 📖 How to use")
@@ -85,23 +108,6 @@ with st.sidebar:
     4. **Analyze**: Click the '🚀 Analyze Feedback' button.
     """)
     st.markdown("---")
-
-    st.header("🔑 Configuration")
-    api_key = st.text_input("Gemini API Key", type="password", 
-                             help="Enter your Google Gemini API key")
-    
-    model_name = "gemini-flash-latest"
-    if api_key:
-        with st.spinner("Fetching models..."):
-            available_models = FeedbackAnalyzer.list_available_models(api_key)
-            if available_models:
-                # Try to set default to flash if available
-                default_index = 0
-                for i, m in enumerate(available_models):
-                    if 'flash' in m.lower():
-                        default_index = i
-                        break
-                model_name = st.selectbox("Select Model", available_models, index=default_index)
 
 # Sample data
 sample_feedback = """The new update is amazing! Love the dark mode feature.

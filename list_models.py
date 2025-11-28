@@ -2,7 +2,7 @@ import google.generativeai as genai
 import os
 
 # Use the key from the file or environment
-api_key = 'AIzaSyAQbD9TfL6G3cdy3FZF1j9WzYUuoi3JO7A'
+api_key = 'update-key-here'
 genai.configure(api_key=api_key)
 
 print("Listing available models:")

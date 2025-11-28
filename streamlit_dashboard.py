@@ -101,13 +101,13 @@ with st.sidebar:
     st.markdown("### 📖 How to use")
     st.markdown("""
     1. **Enter API Key**: Enter your Google Gemini API key below.
-    2. **Select Model**: Choose a model from the dropdown (appears after entering key).
+    2. **Select Model**: Choose a model from the dropdown.
     3. **Provide Data**:
-        *   **Enter Feedback Tab**: Paste text or click 'Load Sample Data'.
-        *   **Upload CSV Tab**: Upload a file and click 'Use this data'.
-    4. **Analyze**: Click the '🚀 Analyze Feedback' button.
+        *   **Enter Feedback**: Paste text or click 'Load Sample Data'.
+        *   **Upload CSV**: Upload file and click 'Use this data'.
+    4. **Analyze**: Click '🚀 Analyze Feedback'.
+    5. **Review**: Scroll down to see generated insights.
     """)
-    st.markdown("---")
 
 # Sample data
 sample_feedback = """The new update is amazing! Love the dark mode feature.

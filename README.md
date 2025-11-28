@@ -73,7 +73,3 @@ You need a Google Gemini API key to use this application.
 This application is designed with security in mind.
 -   **Session Timeout**: If the app is left idle for 5 minutes, the session will time out, and all loaded data (feedback and insights) will be cleared from memory.
 -   **Data Handling**: Data is processed in-memory and sent to the Gemini API for analysis. It is not persisted to any database by this application.
-
-## 📄 License
-
-[MIT License](LICENSE)

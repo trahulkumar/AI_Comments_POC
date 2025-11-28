@@ -25,6 +25,17 @@ st.set_page_config(
     layout="wide"
 )
 
+# Reduce whitespace at the top
+st.markdown("""
+    <style>
+        .block-container {
+            padding-top: 1rem;
+            padding-bottom: 0rem;
+            margin-top: 1rem;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
 # Session Timeout Logic
 TIMEOUT_SECONDS = 300  # 5 minutes
 
@@ -66,10 +77,12 @@ st.markdown("Analyze user feedback with AI-powered insights")
 with st.sidebar:
     st.markdown("### 📖 How to use")
     st.markdown("""
-    1. Enter your API key
-    2. Paste feedback or upload CSV
-    3. Click 'Analyze Feedback'
-    4. View insights below
+    1. **Enter API Key**: Enter your Google Gemini API key below.
+    2. **Select Model**: Choose a model from the dropdown (appears after entering key).
+    3. **Provide Data**:
+        *   **Enter Feedback Tab**: Paste text or click 'Load Sample Data'.
+        *   **Upload CSV Tab**: Upload a file and click 'Use this data'.
+    4. **Analyze**: Click the '🚀 Analyze Feedback' button.
     """)
     st.markdown("---")
 

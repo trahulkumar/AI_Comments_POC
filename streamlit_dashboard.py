@@ -64,6 +64,15 @@ st.markdown("Analyze user feedback with AI-powered insights")
 
 # Sidebar for API key
 with st.sidebar:
+    st.markdown("### 📖 How to use")
+    st.markdown("""
+    1. Enter your API key
+    2. Paste feedback or upload CSV
+    3. Click 'Analyze Feedback'
+    4. View insights below
+    """)
+    st.markdown("---")
+
     st.header("🔑 Configuration")
     api_key = st.text_input("Gemini API Key", type="password", 
                              help="Enter your Google Gemini API key")
@@ -80,14 +89,6 @@ with st.sidebar:
                         default_index = i
                         break
                 model_name = st.selectbox("Select Model", available_models, index=default_index)
-    st.markdown("---")
-    st.markdown("### 📖 How to use")
-    st.markdown("""
-    1. Enter your API key
-    2. Paste feedback or upload CSV
-    3. Click 'Analyze Feedback'
-    4. View insights below
-    """)
 
 # Sample data
 sample_feedback = """The new update is amazing! Love the dark mode feature.
@@ -114,7 +115,7 @@ with tab1:
     with col1:
         feedback_text = st.text_area(
             "Enter feedback (one per line)",
-            height=300,
+            height=150,
             placeholder="Paste your feedback here...",
             key="feedback_text"
         )
@@ -128,18 +129,23 @@ with tab1:
         st.button("Load Sample Data", use_container_width=True, on_click=load_sample_data)
 
 with tab2:
-    st.subheader("File Settings")
-    file_structure = st.radio(
-        "File Structure",
-        ["Standard CSV", "Comma Separated", "One Comment Per Line"],
-        help="Select how your data is structured"
-    )
+    col_settings, col_upload = st.columns(2)
     
-    start_line = 1
-    if file_structure == "One Comment Per Line":
-        start_line = st.number_input("Start reading from line", min_value=1, value=1)
-    
-    uploaded_file = st.file_uploader("Upload file", type=['csv', 'txt'])
+    with col_settings:
+        st.subheader("File Settings")
+        file_structure = st.radio(
+            "File Structure",
+            ["Standard CSV", "Comma Separated", "One Comment Per Line"],
+            help="Select how your data is structured"
+        )
+        
+        start_line = 1
+        if file_structure == "One Comment Per Line":
+            start_line = st.number_input("Start reading from line", min_value=1, value=1)
+            
+    with col_upload:
+        st.subheader("Upload File")
+        uploaded_file = st.file_uploader("Choose a file", type=['csv', 'txt'])
     
     if uploaded_file:
         df = None
